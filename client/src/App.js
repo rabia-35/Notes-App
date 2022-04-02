@@ -3,15 +3,24 @@ import NoteList from './components/notesList/noteList'
 import NewNote from './components/newNote/newNote';
 import Search from './components/search/search'
 import { ChakraProvider } from '@chakra-ui/react'
+import {Container, Row, Col} from "react-bootstrap"
 function App() {
   return (
-    <div className='appBg' >
-       <ChakraProvider >
-          <Search />
-          <NoteList />
-          <NewNote />
-       </ChakraProvider>
-    </div>
+    <Container  >
+      <Row >
+        <ChakraProvider >
+           
+           <Col xs={9}  className="app">  <NoteList />  </Col> 
+           <Col xs={3}   className='bg-warning'> 
+              <Row>
+                <Search /> 
+                <NewNote  /> 
+              </Row> 
+           </Col> 
+           
+        </ChakraProvider>
+       </Row>
+    </Container>
    
   );
 }

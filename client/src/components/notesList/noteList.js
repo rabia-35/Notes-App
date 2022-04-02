@@ -6,7 +6,7 @@ import { getNotes, deleteNote } from '../../api';
 
 function NoteList() {
     const notes=useSelector(state=>state.notes.items)
-    console.log(notes)
+  
     const dispatch=useDispatch();
 
     const handleClick= async (id)=>{
@@ -16,26 +16,27 @@ function NoteList() {
       dispatch(getNotes())
     }, [dispatch])
 
-    let lastNotes=[]
-    for(let i=notes.length-1; i>notes.length-4; i--){
-      lastNotes.push(notes[i]);
-    }
-    console.log(lastNotes)
-  return (
-    <Container>
-      <Row>
-        {
-          lastNotes.map(item=>(
-            <Col md={{ span:3 }} key={item.id}  className="mt-5 me-1 list" >
-              <Badge className='float-start mt-2' style={{fontSize:"2%"}} >{item.title}</Badge>
-              <span><Button variant="light" className='btn-sm float-end' onClick={()=>handleClick(item.id)} >x</Button></span> <br></br>
-              <Text>{item.description}</Text>
-            </Col>
-          ))
-        }
-      </Row>
-    </Container>
-  )
+    console.log(notes)
+
+    return (
+      
+          <Row>
+                {
+                  notes.map((item, i)=>{
+                    if(i<notes.length && i>notes.length-4){
+                      return (
+                        <Col  key={item.id}  className="mt-5 me-5 pb-3 list" style={{ backgroundColor:`${item.bgColor}` }} >
+                                  <Badge className='float-start mt-2' style={{fontSize:"2%"}} >{item.title}</Badge>
+                                  <span><Button variant="light" className='btn-sm float-end' onClick={()=>handleClick(item.id)} >x</Button></span> <br></br>
+                                  <Text>{item.description}</Text>
+                                </Col>
+                              )
+                          }
+                        })
+                }
+            </Row>
+        
+    )
 }
 
 export default NoteList

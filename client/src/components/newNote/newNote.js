@@ -6,22 +6,24 @@ import {useDispatch } from "react-redux"
 function NewNote() {
   const [title, setTitle]=useState("")
   const [description, setDescription]=useState("")
+  const [bgColor, setBgColor]=useState("#563d7c")
   const dispatch=useDispatch()
 
   const handleSubmit= async (e)=>{
     if(!title || !description) return;
 
     e.preventDefault();
-    await dispatch(addNote({ title, description }))
+    await dispatch(addNote({ title, description , bgColor }))
     setTitle("");
     setDescription("");
    }
 
+
   return (
-    <div className='float-end m-5' >
+    <div className='newNote' >
      <Popover >
         <PopoverTrigger>
-          <Button bg="blue.400">New Note</Button>
+          <Button  >New Note</Button>
         </PopoverTrigger>
         <PopoverContent>
           <PopoverArrow />
@@ -46,11 +48,14 @@ function NewNote() {
               type="color"
               id="exampleColorInput"
               defaultValue="#563d7c"
+              value={bgColor}
               title="Choose your color"
+              onChange={(e)=>setBgColor(e.target.value)}
             />
           </span>
-          <span><Button onClick={handleSubmit} className='bg-warning float-end m-2'>Add Note</Button> </span> 
+          <span><Button onClick={handleSubmit} className='bg-warning float-end '>Add Note</Button> </span> 
           </>
+          
         </PopoverContent>
          
       </Popover>

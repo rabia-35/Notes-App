@@ -10,8 +10,10 @@ import {Provider} from "react-redux"
 ReactDOM.render(
   <React.StrictMode >
     <ChakraProvider>
-    <Provider  store={store} >
-     <App />
+    <Provider  store={store}  >
+      <div className='bg-dark'>
+      <App />
+      </div>
     </Provider>
     </ChakraProvider>
   </React.StrictMode>,

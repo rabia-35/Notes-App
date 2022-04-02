@@ -4,7 +4,6 @@ import { getNotes, addNote, deleteNote } from "../../api";
      name:"notes",
      initialState:{
          items:[],
-         themeColor:"yellow",
      },
      reducers:{},
      extraReducers:{

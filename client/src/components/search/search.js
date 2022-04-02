@@ -7,13 +7,13 @@ import { Input, Center } from "@chakra-ui/react"
 function Search() {
  
   return (
-    <Center className='mt-3 bg-white'  >
+    <Center className='mt-5 '  >
         <Input
-            color='tomato'
+            color='gray'
             placeholder='search note'
             _placeholder={{ opacity: 0.4, color: 'inherit' }}
-            size="lg" w="50%" 
-            className='mb-3'
+            size="lg" 
+            className='mb-3 bg-light'
         />
     </Center>
   )
