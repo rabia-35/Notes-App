@@ -5,67 +5,62 @@ const cors = require('cors');
 const { json } = require('body-parser');
 const { nanoid } = require('nanoid');
 
-dotenv.config({ path: './config.env' });
+dotenv.config({ path: "./config.env" });
 
 const app = express();
 
 app.use(cors());
 app.use(json());
 
-let todos = [
+let notes = [
   {
     id: nanoid(),
-    title: 'todo 1',
-    completed: true,
+    title: 'note 1',
+    description:"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+    bgColor:"#23c788"
   },
   {
     id: nanoid(),
-    title: 'todo 2',
-    completed: false,
+    title: 'note 2',
+    description:"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+    bgColor:"#23c788"
   },
   {
     id: nanoid(),
-    title: 'todo 3',
-    completed: false,
+    title: 'note 3',
+    description:"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+    bgColor:"#23c788"
   },
   {
     id: nanoid(),
-    title: 'todo 4',
-    completed: false,
+    title: 'note 4',
+    description:"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+    bgColor:"#23c788"
   },
   {
     id: nanoid(),
-    title: 'todo 5',
-    completed: false,
+    title: 'note 5',
+    description:"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+    bgColor:"#23c788"
   },
 ];
 
-app.get('/todos', (req, res) => res.send(todos));
+app.get('/notes', (req, res) => res.send(notes));
 
-app.post('/todos', (req, res) => {
-  const todo = { title: req.body.title, id: nanoid(), completed: false };
-  todos.push(todo);
-  return res.send(todo);
+app.post('/notes', (req, res) => {
+  const note = { title: req.body.title, id: nanoid(), description:req.body.description, bgColor:req.body.bgColor };
+  notes.push(note);
+  return res.send(note);
 });
 
-app.patch('/todos/:id', (req, res) => {
+app.delete('/notes/:id', (req, res) => {
   const id = req.params.id;
-  const index = todos.findIndex((todo) => todo.id == id);
-  const completed = Boolean(req.body.completed);
+  const index = notes.findIndex((note) => note.id == id);
   if (index > -1) {
-    todos[index].completed = completed;
-  }
-  return res.send(todos[index]);
-});
-
-app.delete('/todos/:id', (req, res) => {
-  const id = req.params.id;
-  const index = todos.findIndex((todo) => todo.id == id);
-  if (index > -1) {
-    todos.splice(index, 1);
+    notes.splice(index, 1);
   }
 
-  res.send(todos);
+  res.send(notes);
 });
 
 const PORT = 7000;
