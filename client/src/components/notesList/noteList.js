@@ -1,6 +1,6 @@
 import {useEffect} from 'react'
-import { Button, Container,Row, Col } from 'react-bootstrap';
-import { Badge, Text } from '@chakra-ui/react'
+import { Button, Row, Col } from 'react-bootstrap';
+import { Badge, Text} from '@chakra-ui/react'
 import {useSelector, useDispatch} from "react-redux"
 import { getNotes, deleteNote } from '../../api';
 
@@ -34,6 +34,7 @@ function NoteList() {
                           }
                         })
                 }
+               
             </Row>
         
     )

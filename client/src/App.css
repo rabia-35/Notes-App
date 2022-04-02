@@ -1,11 +1,12 @@
 .app{
-    background-image: url("img_tree.gif"), url("paper.gif");
-  background-color: #cccccc;
+    background-image: url("../public/planet.png");
+    background-color: #cccccc;
 }
 
 .newNote{
-  margin-top: 90%;
-  margin-bottom: 57%;
+  margin-top: 30%;
+  margin-bottom: 70%;
+  margin-left: 38%;
 
 }
 .list{

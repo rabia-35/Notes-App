@@ -2,6 +2,7 @@ import './App.css';
 import NoteList from './components/notesList/noteList'
 import NewNote from './components/newNote/newNote';
 import Search from './components/search/search'
+import Footer from './components/footer/footer';
 import { ChakraProvider } from '@chakra-ui/react'
 import {Container, Row, Col} from "react-bootstrap"
 function App() {
@@ -15,6 +16,7 @@ function App() {
               <Row>
                 <Search /> 
                 <NewNote  /> 
+                <Footer />
               </Row> 
            </Col> 
            

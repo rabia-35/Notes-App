@@ -23,7 +23,7 @@ function NewNote() {
     <div className='newNote' >
      <Popover >
         <PopoverTrigger>
-          <Button  >New Note</Button>
+          <Button  >New Note <strong style={{fontSize:"40px", marginLeft:"10px" }}>+</strong> </Button>
         </PopoverTrigger>
         <PopoverContent>
           <PopoverArrow />
