@@ -1,0 +1,11 @@
+.appBg{
+    height: 100vh;
+    background-color: rgb(68, 66, 66);
+}
+.list{
+    background-color: rgb(243, 227, 107);
+    min-height: 100%;
+}
+.list >span> button{
+    color: rgb(109, 104, 104);
+}

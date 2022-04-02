@@ -5,11 +5,14 @@ import Search from './components/search/search'
 import { ChakraProvider } from '@chakra-ui/react'
 function App() {
   return (
-    <ChakraProvider >
-      <Search />
-      <NoteList />
-      <NewNote />
-    </ChakraProvider>
+    <div className='appBg' >
+       <ChakraProvider >
+          <Search />
+          <NoteList />
+          <NewNote />
+       </ChakraProvider>
+    </div>
+   
   );
 }
 
