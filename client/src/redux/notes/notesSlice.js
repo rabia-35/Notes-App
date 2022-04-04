@@ -4,8 +4,18 @@ import { getNotes, addNote, deleteNote } from "../../api";
      name:"notes",
      initialState:{
          items:[],
+         filtered:[],
      },
-     reducers:{},
+     reducers:{
+         filteredNote:(state, action)=>{
+             const title=action.payload
+             const index=state.items.findIndex(item=> item.title===title)
+             if(index!== -1){
+               state.filtered.push(state.items[index])
+             }
+             
+         }
+     },
      extraReducers:{
          [getNotes.fulfilled]:(state, action)=>{
              state.items=action.payload;
@@ -24,4 +34,5 @@ import { getNotes, addNote, deleteNote } from "../../api";
         }
      }
  })
+ export const {filteredNote}=notesSlice.actions;
  export default notesSlice.reducer;
