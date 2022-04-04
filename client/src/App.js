@@ -5,6 +5,7 @@ import Search from './components/search/search'
 import Footer from './components/footer/footer';
 import { ChakraProvider } from '@chakra-ui/react'
 import {Container, Row, Col} from "react-bootstrap"
+import AllNotes from './components/allNotes/allNotes';
 function App() {
   return (
     <Container  >
@@ -15,6 +16,7 @@ function App() {
            <Col xs={3}   className='bg-warning'> 
               <Row>
                 <Search /> 
+                <AllNotes />
                 <NewNote  /> 
                 <Footer />
               </Row> 

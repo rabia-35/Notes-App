@@ -3,18 +3,37 @@
     background-color: #cccccc;
 }
 
-.newNote{
-  margin-top: 30%;
-  margin-bottom: 70%;
-  margin-left: 38%;
-
-}
 .list{
     border-radius: 5%;
     box-shadow: 25px -16px rgb(212, 212, 212);
 }
+.allBtn > Button {
 
-.newNote> Button {
+  align-items: center;
+  background-image: linear-gradient(144deg,#AF40FF, #5B42F3 50%,#00DDEB);
+  border: 0;
+  border-radius: 8px;
+  box-shadow: rgba(151, 65, 252, 0.2) 0 15px 30px -5px;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  display: flex;
+  font-family: Phantomsans, sans-serif;
+  font-size: 20px;
+  justify-content: center;
+  line-height: 1em;
+  max-width: 100%;
+  min-width: 100px;
+  margin-top: 10%;
+  margin-left: 54%;
+  padding: 19px 24px;
+  text-decoration: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  white-space: nowrap;
+  cursor: pointer;
+}
+.newNote > Button {
 
   align-items: center;
   background-image: linear-gradient(144deg,#AF40FF, #5B42F3 50%,#00DDEB);
@@ -30,6 +49,9 @@
   line-height: 1em;
   max-width: 100%;
   min-width: 140px;
+  margin-top: 10%;
+  margin-bottom: 130%;
+  margin-left: 42%;
   padding: 19px 24px;
   text-decoration: none;
   user-select: none;
@@ -51,6 +73,14 @@
   }
 }
 
-
+.fixed{
+  
+    position: fixed;
+    bottom: 0;
+    right: 1;
+    width: 300px;
+    
+  
+}
 
 

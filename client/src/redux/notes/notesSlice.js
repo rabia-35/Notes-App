@@ -5,6 +5,7 @@ import { getNotes, addNote, deleteNote } from "../../api";
      initialState:{
          items:[],
          filtered:[],
+         all: false,
      },
      reducers:{
          filteredNote:(state, action)=>{
@@ -13,7 +14,10 @@ import { getNotes, addNote, deleteNote } from "../../api";
              if(index!== -1){
                state.filtered.push(state.items[index])
              }
-             
+         },
+         allNotes:(state)=>{
+            state.filtered.length=0;
+            state.all=true;
          }
      },
      extraReducers:{
@@ -34,5 +38,5 @@ import { getNotes, addNote, deleteNote } from "../../api";
         }
      }
  })
- export const {filteredNote}=notesSlice.actions;
+ export const {filteredNote, allNotes}=notesSlice.actions;
  export default notesSlice.reducer;

@@ -3,7 +3,7 @@ import { Link, Text} from "@chakra-ui/react"
 function Footer() {
   return (
    
-        <div className="mx-3 mb-5">
+        <div className="fixed">
             Developed by <strong>Rabia Ölker</strong>
             <Text>
                 Github {">> "}
@@ -15,4 +15,4 @@ function Footer() {
     )
 } 
 
-export default Footer
+export default React.memo(Footer)
