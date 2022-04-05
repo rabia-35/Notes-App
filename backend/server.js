@@ -9,6 +9,8 @@ dotenv.config({ path: "./config.env" });
 
 const app = express();
 
+express.static('./app/<build klasörü>')
+
 app.use(cors());
 app.use(json());
 
