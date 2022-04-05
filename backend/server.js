@@ -11,6 +11,7 @@ const app = express();
 
 express.static('./app/<build klasörü>')
 
+
 app.use(cors());
 app.use(json());
 
@@ -48,6 +49,10 @@ let notes = [
 ];
 
 app.get('/notes', (req, res) => res.send(notes));
+
+app.get('/', function (req, res) {
+  res.sendFile(__dirname + '/index.html');
+});
 
 app.post('/notes', (req, res) => {
   const note = { title: req.body.title, id: nanoid(), description:req.body.description, bgColor:req.body.bgColor };
