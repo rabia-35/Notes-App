@@ -7,7 +7,6 @@
 * Chakra.ui
 * Bootstarp-react
 ---
-> [![Netlify Status](https://api.netlify.com/api/v1/badges/2dea8284-8f10-4e72-ab22-b9ed2da0ab1b/deploy-status)](https://color-notes-app.netlify.app)
 
 ### Projenin Videosu
 
