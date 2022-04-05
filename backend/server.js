@@ -48,11 +48,7 @@ let notes = [
   },
 ];
 
-//app.get('/notes', (req, res) => res.send(notes));
-
-app.get('/notes', function (req, res) {
-  res.sendFile(notes + '/index.html');
-});
+app.get('/notes', (req, res) => res.send(notes));
 
 app.post('/notes', (req, res) => {
   const note = { title: req.body.title, id: nanoid(), description:req.body.description, bgColor:req.body.bgColor };
