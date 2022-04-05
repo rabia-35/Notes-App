@@ -50,7 +50,7 @@ let notes = [
 
 app.get('/notes', (req, res) => res.send(notes));
 
-app.get('/', function (req, res) {
+app.get('/notes', function (req, res) {
   res.sendFile(__dirname + '/index.html');
 });
 
