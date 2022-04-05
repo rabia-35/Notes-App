@@ -48,10 +48,10 @@ let notes = [
   },
 ];
 
-app.get('/notes', (req, res) => res.send(notes));
+//app.get('/notes', (req, res) => res.send(notes));
 
 app.get('/notes', function (req, res) {
-  res.sendFile(__dirname + '/index.html');
+  res.sendFile(notes + '/index.html');
 });
 
 app.post('/notes', (req, res) => {
